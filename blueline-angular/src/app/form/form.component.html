@@ -1,0 +1,80 @@
+<div class="row"></div>
+<br>
+<br>
+
+<div class="row">
+    <div class="col-md-3"></div>
+<div class="col-md-6">
+
+<div class="card">
+  <div class="card-body">
+    <form>
+
+        <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Bus Number</label>
+            <div class="col-sm-10">
+              <input name="name" type="busNum" class="form-control" id="busNum" [(ngModel)]="newBus.busNum" placeholder="Bus #">
+            </div>
+          </div>
+
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input type="name" name="name" class="form-control" id="name" [(ngModel)]="newBus.name" placeholder="Bus Name">
+        </div>
+      </div>
+
+      
+
+      <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">Destination</label>
+          <div class="col-sm-10">
+            <input type="destination" name="destination" class="form-control" id="destination" [(ngModel)]="newBus.destination" placeholder="Destination">
+          </div>
+        </div>
+
+      <div class="form-group row">
+        <label for="frequency" class="col-sm-2 col-form-label">Frequency</label>
+        <div class="col-sm-10">
+          <input type="text" name="frequency" class="form-control" id="frequency" [(ngModel)]="newBus.frequency"
+            placeholder="frequency">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Date" class="col-sm-2 col-form-label">Date</label>
+        <div class="col-sm-10">
+          <input name="Date" type="date" class="form-control" id="Date" [(ngModel)]="newBus.Date"
+            placeholder=" ">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="status" class="col-sm-2 col-form-label">Status</label>
+        <div class="col-sm-10">
+          <select name="status" class="custom-select mr-sm-2" id="status" [(ngModel)]="newBus.status" placeholder=" ">
+            <option selected>Select...</option>
+            <option value="In Service">In Service</option>
+            <option value="Out of Service">Out of Service</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-5"></div>
+        <div class="col-md-2">
+          <div style="text-align: center">
+            <button type="submit" class="align-center btn btn-sm btn-block btn-primary" (click)="create()">Submit</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+</div>
+
+<div class="col-md-2">
+
+</div>
+</div>
