@@ -1,77 +1,80 @@
 <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
-  
-      <!-- <div class="buses" *ngIf="busesList"> -->
-          <div class="buses">
-        <table class="table">
-          <thead class="h">
-            <tr class="h">
-              <th class="h">Bus Number</th>
-              <th class="h">Bus Name</th>
-              <th class="h">Destination</th>
-              <th class="h">Frequency</th>
-              <th class="h">Date</th>
-              <th class="h">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="bus" (dblclick)="editBus(bus)" *ngFor="let bus of busesList">
-  
-              <ng-container *ngIf="!editBuses.includes(bus); else editTD">
-                <td>{{bus.busNum}}</td>
-                <td>{{bus.busName}}</td>
-                <td>{{bus.Destination}}</td>
-                <td>{{bus.Frequency}}</td>
-                <td>{{bus.date}}</td>
-                <td>{{bus.status}}</td>
-              </ng-container>
-  
-              <ng-template #editTD>
-                <td><input type="text" name="name" id="name" (keypress)="submitBus($event, bus)" [(ngModel)]="bus.busNum"
-                    placeholder="Bus #" class="form-control"></td>
-  
-                <td><input type="text" name="busName" id="email" (keypress)="submitBus($event, bus)" [(ngModel)]="bus.busName"
-                    placeholder="Bus Name" class="form-control"></td>
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
 
-  
-                    <td><input type="text" name="destination" id="destination" (keypress)="submitBus($event, bus)" [(ngModel)]="bus.destination"
-                      placeholder=" " class="form-control"></td>
-                
-      
-  
-                      <td><input type="text" name="frequency" id="frequency" (keypress)="submitBus($event, bus)" [(ngModel)]="bus.Frequency"
-                        placeholder=" " class="form-control"></td>
-  
-                <td><input type="date" name="Date" id="Date" (keypress)="submitBus($event, bus)"
-                    [(ngModel)]="bus.Date" placeholder="" class="form-control"></td>
-  
-                
-  
-                <td>
-                  <select name="status" class="custom-select mr-sm-2" id="status" (keypress)="submitBus($event, bus)" [(ngModel)]="bus.status">
-                    <option selected>Select...</option>
-                    <option value="Room Assigned">In Service</option>
-                    <option value="Checked In">Out of Service</option>
-                   
-                  </select>
-                </td>
-                <!-- <td>{{todo.date | date}}</td> -->
-              </ng-template>
-  
-              <td class="o">
-                <button class="btn btn-success" (click)="doneBus(bus)">
-                  <i class="fa fa-check"></i>
-                </button>
-                <button class="btn btn-primary" (click)="editBus(bus)">
-                  <i class="fa fa-pencil"></i>
-                </button>
-                <button class="btn btn-danger" (click)="deleteBus(bus)">
-                  <i class="fa fa-trash"></i>
-                </button>
+    <!-- <div class="buses" *ngIf="busesList"> -->
+    <div class="buses">
+      <table class="table">
+        <thead class="h">
+          <tr class="h">
+            <th class="h">Bus Number</th>
+            <th class="h">Bus Name</th>
+            <th class="h">Destination</th>
+            <th class="h">Frequency</th>
+            <th class="h">Date</th>
+            <th class="h">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bus" (dblclick)="editBus(bus)" *ngFor="let bus of busesList">
+
+            <ng-container *ngIf="!editBuses.includes(bus); else editTD">
+              <td>{{bus.busNum}}</td>
+              <td>{{bus.busName}}</td>
+              <td>{{bus.destination}}</td>
+              <td>{{bus.frequency}}</td>
+              <td>{{bus.date | date}}</td>
+              <td>{{bus.status}}</td>
+            </ng-container>
+
+            <ng-template #editTD>
+              <td><input type="text" name="name" id="name" (keypress)="submitBus($event, bus)" [(ngModel)]="bus.busNum"
+                  placeholder="Bus #" class="form-control"></td>
+
+              <td><input type="text" name="busName" id="email" (keypress)="submitBus($event, bus)" [(ngModel)]="bus.busName"
+                  placeholder="Bus Name" class="form-control"></td>
+
+
+              <td><input type="text" name="destination" id="destination" (keypress)="submitBus($event, bus)"
+                  [(ngModel)]="bus.destination" placeholder=" " class="form-control"></td>
+
+
+
+              <td><input type="text" name="frequency" id="frequency" (keypress)="submitBus($event, bus)" [(ngModel)]="bus.frequency"
+                  placeholder=" " class="form-control"></td>
+
+              <td><input type="date" name="date" id="Date" (keypress)="submitBus($event, bus)" [(ngModel)]="bus.date"
+                  placeholder="" class="form-control"></td>
+
+
+
+              <td>
+                <select name="status" class="custom-select mr-sm-2" id="status" (keypress)="submitBus($event, bus)"
+                  [(ngModel)]="bus.status">
+                  <option selected>Select...</option>
+                  <option value="Room Assigned">In Service</option>
+                  <option value="Checked In">Out of Service</option>
+
+                </select>
               </td>
-  
-            </tr>
-          </tbody>
-        </table>
-      </div>
+              <!-- <td>{{todo.date | date}}</td> -->
+            </ng-template>
+
+            <td class="o">
+              <button class="btn btn-success" (click)="doneBus(bus)">
+                <i class="fa fa-check"></i>
+              </button>
+              <button class="btn btn-primary" (click)="editBus(bus)">
+                <i class="fa fa-pencil"></i>
+              </button>
+              <button class="btn btn-danger" (click)="deleteBus(bus)">
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
